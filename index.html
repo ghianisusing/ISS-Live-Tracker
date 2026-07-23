@@ -8,6 +8,11 @@
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="iss.css">
@@ -27,27 +32,41 @@
         <!-- Information Panel -->
         <aside id="info">
 
-            <h2>Current Position</h2>
+            <h2>ISS Information</h2>
 
-            <p>
-                <strong>Latitude:</strong>
-                <span id="latitude">--</span>
-            </p>
+            <div class="info-group">
 
-            <p>
-                <strong>Longitude:</strong>
-                <span id="longitude">--</span>
-            </p>
+                <h3>Current Position</h3>
 
-            <p>
-                <strong>Last Updated:</strong>
-                <span id="last-update">--</span>
-            </p>
+                <div class="info-item">
+                    <span>Latitude</span>
+                    <strong id="latitude">--</strong>
+                </div>
 
-            <p>
-                <strong>Status:</strong>
-                <span id="status">🟢 Connected</span>
-            </p>
+                <div class="info-item">
+                    <span>Longitude</span>
+                    <strong id="longitude">--</strong>
+                </div>
+
+            </div>
+
+            <div class="info-group">
+
+                <h3>System</h3>
+
+                <div class="info-item">
+                    <span>Last Updated</span>
+                    <strong id="last-update">--</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Status</span>
+                    <span class="status live" id="status">
+                        ● LIVE
+                    </span>
+                </div>
+
+            </div>
 
         </aside>
 
