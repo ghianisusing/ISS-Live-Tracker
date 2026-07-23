@@ -4,84 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ISS Live Tracker</title>
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
-    <!-- Custom CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="iss.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
 <body>
 
     <header>
         <h1>🛰 ISS Live Tracker</h1>
+        <p>Track the International Space Station in real time.</p>
     </header>
 
     <main>
 
-        <!-- Map Section -->
+
         <section id="map"></section>
 
-        <!-- Information Panel -->
+
         <aside id="info">
 
-            <h2>ISS Information</h2>
+            <h2>ISS Telemetry</h2>
 
-            <div class="info-group">
+            <div class="stats-grid">
 
-                <h3>Current Position</h3>
-
-                <div class="info-item">
+                <div class="stat-card">
                     <span>Latitude</span>
-                    <strong id="latitude">--</strong>
+                    <h3 id="latitude">--</h3>
                 </div>
 
-                <div class="info-item">
+                <div class="stat-card">
                     <span>Longitude</span>
-                    <strong id="longitude">--</strong>
+                    <h3 id="longitude">--</h3>
+                </div>
+
+                <div class="stat-card">
+                    <span>Altitude</span>
+                    <h3 id="altitude">--</h3>
+                </div>
+
+                <div class="stat-card">
+                    <span>Velocity</span>
+                    <h3 id="velocity">--</h3>
+                </div>
+
+                <div class="stat-card">
+                    <span>Visibility</span>
+                    <h3 id="visibility">--</h3>
+                </div>
+
+                <div class="stat-card">
+                    <span>Status</span>
+                    <h3 id="status" class="live">● LIVE</h3>
                 </div>
 
             </div>
 
-            <div class="info-group">
+            <div class="system">
 
-                <h3>System</h3>
+                <p>Last Updated</p>
 
-                <div class="info-item">
-                    <span>Last Updated</span>
-                    <strong id="last-update">--</strong>
-                </div>
+                <strong id="last-update">
+                    --
+                </strong>
 
-                <div class="info-item">
-                    <span>Status</span>
-                    <span class="status live" id="status">
-                        ● LIVE
-                    </span>
-                </div>
+            </div>
+
+            <div class="controls">
+
+                <button id="follow-btn">
+                    🛰 Follow ISS
+                </button>
+
+                <button id="locate-btn">
+                    📍 Locate ISS
+                </button>
+
+                <button id="reset-btn">
+                    🌍 Reset View
+                </button>
 
             </div>
 
         </aside>
-
     </main>
 
-    <footer>
-        <p>
-            Live ISS Tracking using Leaflet.js & OpenStreetMap
-        </p>
-    </footer>
-
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <!-- Your JavaScript -->
+    <script src="https://unpkg.com/leaflet.marker.slideto@0.2.0/Leaflet.Marker.SlideTo.js"></script>
+
     <script src="iss.js"></script>
 
 </body>
